@@ -32,20 +32,59 @@ La aplicación es un dashboard financiero moderno construido con tecnologías de
 
 ## 🏃 Cómo Iniciar la Aplicación
 
-Para lanzar la aplicación en tu entorno local, sigue estos pasos:
+Sigue estos pasos para ejecutar la aplicación en tu entorno local (Windows/Mac/Linux):
 
-1. **Instalar dependencias** (si no lo has hecho):
-    ```bash
-    npm install
-    ```
+### 1. Prerrequisitos
+Asegúrate de tener instalado **Node.js** (versión 20 o superior recomendada).
+- Puedes descargarlo en: [nodejs.org](https://nodejs.org/)
+- Verifica la instalación abriendo una terminal y ejecutando:
+  ```powershell
+  node -v
+  npm -v
+  ```
 
-2. **Ejecutar el servidor de desarrollo**:
-    ```bash
-    npm run dev
-    ```
+### 2. Instalación de Dependencias
+Abre tu terminal (PowerShell o CMD en Windows) en la carpeta del proyecto y ejecuta:
+```powershell
+npm install
+```
 
-3. **Acceder en el navegador**:
-    La aplicación estará disponible en [http://localhost:3000](http://localhost:3000).
+> **Nota para Windows**: Si `npm install` falla o se queda colgado, intenta ejecutar la terminal como **Administrador** o usa el comando:
+> ```powershell
+> npm install --legacy-peer-deps
+> ```
+
+### 3. Ejecutar el Servidor de Desarrollo
+Una vez instaladas las dependencias, inicia el proyecto con:
+```powershell
+npm run dev
+```
+
+### 4. Acceder a la Aplicación
+La aplicación estará disponible en [http://localhost:3000](http://localhost:3000).
+
+## 🛠️ Solución de Problemas en Windows
+
+Si encuentras errores específicos al iniciar en Windows:
+
+1. **Error: "npm no se reconoce..."**: 
+   - Debes instalar Node.js y asegurarte de marcar la opción "Add to PATH" durante la instalación. Reinicia tu terminal después de instalar.
+
+2. **Error: "la ejecución de scripts está deshabilitada..."**:
+   - Este es un error de seguridad de PowerShell. Ejecuta este comando para permitir scripts de confianza:
+     ```powershell
+     Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+     ```
+
+3. **Errores de Permisos (EPERM)**: 
+   - Cierra tu editor (VS Code, etc.) y abre la terminal como Administrador para ejecutar `npm install`.
+
+4. **Limpieza de Caché**:
+   - Si los errores persisten, borra la carpeta `node_modules` y el archivo `package-lock.json`, luego intenta de nuevo:
+     ```powershell
+     rm -Recurse -Force node_modules, package-lock.json
+     npm install
+     ```
 
 ---
 Desarrollado con ❤️ para inversores inteligentes.
